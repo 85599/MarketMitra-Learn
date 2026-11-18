@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MarketMitra — Free Stock Market & Fintech Library (EN + हिंदी)</title>
+<meta name="description" content="Free, legal books, courses and fintech knowledge for Indian and world stock markets. Read everything in English or हिंदी." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📗</text></svg>" />
+</head>
+<body>
+<div class="marble" aria-hidden="true"></div>
+
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 17l4-6 4 3 4-8 4 5"/><path d="M4 20h16"/></svg>
+      </span>
+      <span class="brand-name">Market<span class="brand-thin">Mitra</span></span>
+    </a>
+
+    <nav class="mainnav" aria-label="Sections">
+      <a href="#library" data-nav="library" data-i18n="nav.library">Library</a>
+      <a href="#knowledge" data-nav="knowledge" data-i18n="nav.knowledge">Knowledge</a>
+      <a href="#paths" data-nav="paths" data-i18n="nav.paths">Paths</a>
+      <a href="#tools" data-nav="tools" data-i18n="nav.tools">Calculators</a>
+      <a href="#practice" data-nav="practice" data-i18n="nav.practice">Self-check</a>
+      <a href="#glossary" data-nav="glossary" data-i18n="nav.glossary">Glossary</a>
+      <a href="#saved" data-nav="saved" data-i18n="nav.saved">My Shelf</a>
+      <a href="#connect" data-nav="connect" data-i18n="nav.profiles">Profiles</a>
+    </nav>
+
+    <div class="tools">
+      <button id="langBtn" class="pill pill-dark" type="button" aria-label="Switch language">
+        <span id="langLabel">हिंदी में पढ़ें</span>
+      </button>
+      <button id="themeBtn" class="icon-btn" type="button" title="Theme" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+      </button>
+      <div class="pf" id="pfWrap">
+        <button id="profileBtn" class="pf-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="profileMenu">
+          <span class="pf-avatar" aria-hidden="true">KJ</span>
+          <span class="pf-name" data-i18n="co.name">Khushal Jain</span>
+          <svg class="pf-caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9.5l6 5 6-5"/></svg>
+        </button>
+        <div class="pf-menu" id="profileMenu" hidden>
+          <p class="pf-kicker" data-i18n="co.menuKicker">Find me on</p>
+          <div id="pfItems"></div>
+          <a class="pf-all" href="#connect" data-i18n="co.menuAll">What each profile holds</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">100% free & legal sources only</span></p>
+      <h1 class="headline">
+        <span data-i18n="hero.h1a">Every free book, course and</span>
+        <span class="accent" data-i18n="hero.h1b">fintech answer</span>
+        <span data-i18n="hero.h1c">for the markets —</span>
+        <span class="muted" data-i18n="hero.h1d">in English and हिंदी.</span>
+      </h1>
+      <p class="sub" data-i18n="hero.sub">India and world markets, curated from exchanges, regulators, universities and open textbooks. Nothing paywalled, nothing pirated. Search, filter, save and track your progress.</p>
+      <div class="hero-cta">
+        <a class="pill pill-dark" href="#library" data-i18n="hero.cta1">Browse the library</a>
+        <a class="pill pill-ghost" href="#paths" data-i18n="hero.cta2">Start a learning path</a>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+
+    <div class="hero-cards" id="heroCards" aria-hidden="true"></div>
+  </section>
+
+  <div class="strip">
+    <span class="strip-label" data-i18n="strip.label">Sources we link to</span>
+    <div class="strip-logos" id="sourceStrip"></div>
+  </div>
+
+  <section class="panel" id="library">
+    <div class="panel-head">
+      <div>
+        <h2 data-i18n="lib.title">The library</h2>
+        <p class="panel-sub" data-i18n="lib.sub">Books, courses, tools and papers. Every card opens the official free source.</p>
+      </div>
+      <div class="count-wrap"><span id="resultCount" class="count">0</span><span class="count-word" data-i18n="lib.showing">resources shown</span></div>
+    </div>
+
+    <div class="toolbar">
+      <label class="search">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <input id="searchInput" type="search" data-i18n-ph="lib.search" placeholder="Search markets, UPI, options, NISM, Damodaran…" autocomplete="off" />
+        <kbd>/</kbd>
+      </label>
+      <div class="chips" id="typeChips" role="group" aria-label="Type"></div>
+      <div class="chips" id="regionChips" role="group" aria-label="Region"></div>
+      <div class="chips" id="levelChips" role="group" aria-label="Level"></div>
+      <div class="chips sort-row"><span class="sort-label" data-i18n="lib.sorts">Sort</span><div class="chips" id="sortChips" role="group" aria-label="Sort by"></div></div>
+      <div class="chips">
+        <button class="chip chip-toggle" id="hindiChip" type="button" aria-pressed="false"><span class="tick"></span><span data-i18n="lib.hindiAv">हिंदी available</span></button>
+        <button class="chip chip-toggle" id="freeChip" type="button" aria-pressed="false"><span class="tick"></span><span data-i18n="lib.noSignup">No signup needed</span></button>
+        <button class="chip chip-plain" id="clearBtn" type="button" data-i18n="lib.clear">Clear filters</button>
+      </div>
+    </div>
+
+    <div class="grid" id="resourceGrid"></div>
+    <button class="more" id="moreBtn" type="button" hidden></button>
+    <p class="empty" id="emptyState" hidden data-i18n="lib.empty">Kuch nahi mila — filters hata ke dobara try karein.</p>
+  </section>
+
+  <section class="panel" id="knowledge">
+    <div class="panel-head">
+      <div>
+        <h2 data-i18n="kn.title">Fintech & market knowledge</h2>
+        <p class="panel-sub" data-i18n="kn.sub">Short bilingual explainers — how the Indian market and fintech stack actually work.</p>
+      </div>
+      <div class="chips" id="trackChips" role="group" aria-label="Track"></div>
+    </div>
+    <div class="topic-grid" id="topicGrid"></div>
+  </section>
+
+  <section class="panel" id="paths">
+    <div class="panel-head">
+      <div>
+        <h2 data-i18n="pa.title">Learning paths</h2>
+        <p class="panel-sub" data-i18n="pa.sub">Ordered steps built from the library above. Tick as you finish — progress is saved on this device.</p>
+      </div>
+    </div>
+    <div class="path-grid" id="pathGrid"></div>
+  </section>
+
+  <section class="panel" id="tools">
+    <div class="panel-head">
+      <div>
+        <h2 data-i18n="calc.title">Market calculators</h2>
+        <p class="panel-sub" data-i18n="calc.sub">Four small tools for Indian numbers.</p>
+      </div>
+    </div>
+    <div class="chips" id="calcCats"></div>
+    <div class="calc-grid" id="calcGrid"></div>
+    <p class="calc-warn" data-i18n="calc.warn">Arithmetic, not advice.</p>
+  </section>
+
+  <section class="panel" id="practice">
+    <div class="panel-head">
+      <div>
+        <h2 data-i18n="qz.title">Self-check</h2>
+        <p class="panel-sub" data-i18n="qz.sub">Ten tracks, eight questions each, plus a mixed challenge.</p>
+      </div>
+      <div class="chips" id="qzChips" role="group" aria-label="Quiz track"></div>
+    </div>
+    <p class="quiz-meta" id="qzMeta"></p>
+    <div id="qzBox"></div>
+  </section>
+
+  <section class="panel" id="glossary">
+    <div class="panel-head">
+      <div>
+        <h2 data-i18n="gl.title">Glossary</h2>
+        <p class="panel-sub" data-i18n="gl.sub">Every market word decoded in both languages, with a worked example.</p>
+      </div>
+      <div class="chips" id="glCatChips" role="group" aria-label="Topic"></div>
+    </div>
+    <div class="gl-grid" id="glGrid"></div>
+    <p class="empty" id="glEmpty" hidden data-i18n="gl.empty">No word matched — try a shorter search.</p>
+  </section>
+
+  <section class="panel" id="saved">
+    <div class="panel-head">
+      <div>
+        <h2 data-i18n="sv.title">My shelf</h2>
+        <p class="panel-sub" data-i18n="sv.sub">Saved resources and finished items. Stored locally, no account.</p>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress"><i id="progressBar"></i></div>
+        <span id="progressText" class="progress-text">0%</span>
+      </div>
+    </div>
+    <div class="grid" id="savedGrid"></div>
+    <div id="savedExtra"></div>
+    <p class="empty" id="savedEmpty" data-i18n="sv.empty">Abhi kuch save nahi kiya. Kisi card par ☆ dabao.</p>
+  </section>
+
+  <section class="night" id="connect">
+    <div class="night-glow" aria-hidden="true"></div>
+    <div class="night-stars" aria-hidden="true"></div>
+    <svg class="night-art" viewBox="0 0 320 200" aria-hidden="true" fill="none" stroke-linecap="round">
+      <defs>
+        <linearGradient id="na-l" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#f0b429" stop-opacity=".25"/><stop offset="1" stop-color="#ffe6b0" stop-opacity=".95"/>
+        </linearGradient>
+      </defs>
+      <circle cx="258" cy="40" r="21" fill="rgba(255,236,197,.16)" stroke="rgba(255,236,197,.5)" stroke-width="1.2"/>
+      <circle cx="250" cy="34" r="21" fill="#0c2144" opacity=".55"/>
+      <path d="M14 168L58 140 96 152 138 108 176 122 214 74 252 88 300 34" stroke="url(#na-l)" stroke-width="2.4"/>
+      <g stroke="rgba(190,215,250,.5)" stroke-width="1.6">
+        <path d="M46 158v18M42 162h8"/><path d="M84 148v22M80 152h8"/><path d="M124 116v26M120 122h8"/>
+        <path d="M164 126v20M160 130h8"/><path d="M204 84v28M200 90h8"/><path d="M244 96v18M240 100h8"/>
+      </g>
+      <g fill="#ffe6b0"><circle cx="14" cy="168" r="2.6"/><circle cx="138" cy="108" r="2.6"/><circle cx="300" cy="34" r="3"/></g>
+    </svg>
+    <div class="night-inner">
+      <div class="night-copy">
+        <p class="night-kicker"><span class="night-dot"></span><span data-i18n="co.kicker">Built by Khushal Jain · Jaipur</span></p>
+        <h2 class="night-headline">
+          <span data-i18n="co.h1a">Where a free library</span>
+          <em data-i18n="co.h1b">meets the live chart.</em>
+          <span class="night-tail" data-i18n="co.h1c">Follow the ideas, fork the code.</span>
+        </h2>
+        <p class="night-sub" data-i18n="co.sub">Everything on this page is free to read. The charts, indicators and screeners behind it are public too — on TradingView and on GitHub. Follow, reuse and improve them.</p>
+      </div>
+      <div class="night-cards" id="connectCards"></div>
+      <p class="night-note" data-i18n="co.note">Both profiles are public. Nothing here is for sale and none of it is investment advice.</p>
+    </div>
+    <div class="night-field" aria-hidden="true"></div>
+  </section>
+
+  <footer class="foot">
+    <div>
+      <p class="foot-strong">MarketMitra</p>
+      <p class="foot-note" data-i18n="foot.note">Educational links only — not investment advice. Verify tax and regulation rules on official sites before acting.</p>
+    </div>
+    <p class="foot-meta">Built for self-learners · English + हिंदी · <span data-i18n="foot.made">Made with free & open knowledge</span></p>
+  </footer>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Close">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="data-tools.js"></script>
+<script src="data-quiz.js"></script>
+<script src="data-bulk.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

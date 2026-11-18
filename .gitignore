@@ -1,0 +1,29 @@
+# scratch tooling, browser profiles and captures
+_*/
+_*.js
+_*.py
+_*.txt
+_*.json
+_*.html
+shots/
+demo.gif
+*.log
+*.stackdump
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ingestion intermediates — regenerated locally, the site only needs data-bulk.js
+arxiv.json
+books_final.json
+bulk.json
+bulk_stats.json
+curated.json
+hindi_books.json
+varsity.json
+yt.json
+
+# generator scripts (they read the intermediates above)
+gen_bulk.py
+gen_more.py
+gen_site.py
