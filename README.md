@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/cover.png" alt="MarketMitra — every legally free way to learn the Indian market" width="100%">
-</p>
-
 <h1 align="center">MarketMitra — the free Indian stock-market library</h1>
 
 <p align="center">
@@ -19,15 +15,13 @@
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs welcome">
 </p>
 
-**One click, then it just works:** <https://85599.github.io/MarketMitra-Learn/> — clone it, host it anywhere, or open `index.html` straight from your file manager. It is a plain static site: no server, no framework, no account, nothing to install.
-
-<details>
-<summary><b>Watch the 80-second walkthrough</b> (what it does, what problem it solves, who it is for)</summary>
-<p>
-  <video src="assets/demo.mp4" controls muted loop playsinline width="100%"></video>
-  <br>If the player does not start here, <a href="https://85599.github.io/MarketMitra-Learn/assets/demo.mp4">open the video directly</a>.
+<p align="center">
+  <a href="https://85599.github.io/MarketMitra-Learn/"><img src="assets/demo.gif" alt="80-second walkthrough: the library, search, knowledge, paths, ten calculators, self-check quizzes, glossary and the Hindi mode"></a>
+  <br>
+  <sub>80 seconds, start to finish · same walkthrough as a 1280×720 MP4: <a href="https://85599.github.io/MarketMitra-Learn/assets/demo.mp4">demo.mp4</a></sub>
 </p>
-</details>
+
+**One click, then it just works:** <https://85599.github.io/MarketMitra-Learn/> — clone it, host it anywhere, or open `index.html` straight from your file manager. It is a plain static site: no server, no framework, no account, nothing to install.
 
 ---
 

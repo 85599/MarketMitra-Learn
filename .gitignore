@@ -6,7 +6,7 @@ _*.txt
 _*.json
 _*.html
 shots/
-demo.gif
+/demo.gif
 *.log
 *.stackdump
 .DS_Store
